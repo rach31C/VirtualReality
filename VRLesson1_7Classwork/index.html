@@ -7,6 +7,39 @@
       <a-assets>
         <img id="texture" src="pacman_maze.jpg" />
       </a-assets>
+
+      <a-entity class="ghost">
+        <a-sphere color="red" class="ghost-body" position="0 2 -3" scale="1 1.25 1" theta-length="90"></a-sphere>
+        <a-cylinder color="red" class="ghost-body2" position="0 1.5 -3"></a-cylinder>
+        <a-entity class="ghost-bottoms" position="0 0.25 0">
+          <a-cone  color="red" class="ghost-bottom" position="-0.5 0.5 -3" scale="0.5 1 0.5" rotation="180 0 0"></a-cone>
+          <a-cone color="red" class="ghost-bottom" position="0.5 0.5 -3" scale="0.5 1 0.5" rotation="180 0 0"></a-cone>
+          <a-cone color="red" class="ghost-bottom" position="0 0.5 -3" scale="0.5 1 0.5" rotation="180 0 0"></a-cone>
+        </a-entity>
+       
+        <a-sphere class="eyeball" color="white" position="-0.25 2 -2" scale="0.2 0.3 0.2"></a-sphere>
+        <a-sphere class="pupil" color="blue" position="-0.25 2 -1.79" scale="0.1 0.1 0.1"></a-sphere>
+        <a-sphere class="eyeball" color="white" position="0.25 2 -2" scale="0.2 0.3 0.2"></a-sphere>
+        <a-sphere class="pupil" color="blue" position="0.25 2 -1.79" scale="0.1 0.1 0.1"></a-sphere>
+        
+      </a-entity>
+
+      <a-entity class="ghost" position="5 2 -3">
+        <a-sphere color="yellow" class="ghost-body" position="0 2 -3" scale="1 1.25 1" theta-length="90"></a-sphere>
+        <a-cylinder color="yellow" class="ghost-body2" position="0 1.5 -3"></a-cylinder>
+        <a-entity class="ghost-bottoms" position="0 0.25 0">
+          <a-cone  color="yellow" class="ghost-bottom" position="-0.5 0.5 -3" scale="0.5 1 0.5" rotation="180 0 0"></a-cone>
+          <a-cone color="yellow" class="ghost-bottom" position="0.5 0.5 -3" scale="0.5 1 0.5" rotation="180 0 0"></a-cone>
+          <a-cone color="yellow" class="ghost-bottom" position="0 0.5 -3" scale="0.5 1 0.5" rotation="180 0 0"></a-cone>
+        </a-entity>
+       
+        <a-sphere class="eyeball" color="white" position="-0.25 2 -2" scale="0.2 0.3 0.2"></a-sphere>
+        <a-sphere class="pupil" color="blue" position="-0.4 2 -1.79" scale="0.1 0.1 0.1"></a-sphere>
+        <a-sphere class="eyeball" color="white" position="0.25 2 -2" scale="0.2 0.3 0.2"></a-sphere>
+        <a-sphere class="pupil" color="blue" position="0.1 2 -1.79" scale="0.1 0.1 0.1"></a-sphere>
+        
+      </a-entity>
+
       <a-plane position="0 0 -4" rotation="-90 0 0" width="20" height="20" repeat="5 5" src="#texture"></a-plane>
       <a-sky color="black"></a-sky>
     </a-scene>
