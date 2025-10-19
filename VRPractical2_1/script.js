@@ -20,8 +20,14 @@ window.addEventListener("DOMContentLoaded",function() {
     let r = rnd(0,360);
     createCloud(x, y, z, r);
   }
+  
 
-  createHouse(0, -5)
+  for(let i=0; i<15; i++){
+    let x = rnd(-20, 20);
+    let z = rnd(-20, 20);
+    createHouse(x, z);
+  }
+  
 
   
     //Task 4: Use the createHouse(...)  to add several houses to the scene at various positions.
@@ -251,12 +257,50 @@ function createHouse(x, z){
   floor.setAttribute("height", "0.1");
   floor.setAttribute("depth", "6");
   floor.setAttribute("position","0 0 -3");
+  
 
   let roof1 = document.createElement("a-box");
   roof1.setAttribute("width", "6");
   roof1.setAttribute("height", "0.1");
   roof1.setAttribute("depth", "3.75");
+  roof1.setAttribute("color","#8b8887");
   roof.append(roof1);
+
+  let roof2 = document.createElement("a-cone");
+  roof2.setAttribute("segments-radial","4");
+  roof2.setAttribute("radius-bottom","4.6");
+  roof2.setAttribute("height","2");
+  roof2.setAttribute("position","0 1  -3");
+  roof2.setAttribute("rotation","0 45 0");
+  roof2.setAttribute("color","#8b8887");
+  roof.append(roof2);
+
+  roof.setAttribute("position","0 3.01 0");
+
+  let porch_floor = document.createElement("a-box");
+  porch_floor.setAttribute("width", "6");
+  porch_floor.setAttribute("height", "0.25");
+  porch_floor.setAttribute("depth", "2");
+  porch_floor.setAttribute("color","#765744");
+  porch.append(porch_floor);
+
+  let pole1 = document.createElement("a-box");
+  pole1.setAttribute("width", "0.1");
+  pole1.setAttribute("height", "5.75");
+  pole1.setAttribute("depth", "0.1");
+  pole1.setAttribute("position","-2.75 0 0.75");
+  pole1.setAttribute("color","#a17960");
+  porch.append(pole1);
+
+  let pole2 = document.createElement("a-box");
+  pole2.setAttribute("width", "0.1");
+  pole2.setAttribute("height", "5.75");
+  pole2.setAttribute("depth", "0.1");
+  pole2.setAttribute("position","2.75 0 0.75");
+  pole2.setAttribute("color","#a17960");
+  porch.append(pole2);
+
+  porch.setAttribute("position","0 0 1");
 
   
 
