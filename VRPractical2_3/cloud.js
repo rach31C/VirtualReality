@@ -27,6 +27,6 @@ class Cloud{
         this.obj.append( part_cloud4 );
 
         this.obj.setAttribute("position",{x:x, y:y, z:z});
-        scene.append( this.obj )
+        scene.append( this.obj );
     }
 }
