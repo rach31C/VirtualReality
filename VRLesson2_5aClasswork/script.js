@@ -28,7 +28,7 @@ function loop(){
   snowman.spin();
   //Challenge 4: Make the cloud fly
   cloud.fly();
-  //Challenge 8: Make the snowflake fall]
+  //Challenge 8: Make the snowflake fall
   snowflake.fall();
 
   window.requestAnimationFrame(loop);
