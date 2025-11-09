@@ -1,26 +1,28 @@
 let scene;
-let mech;
 let mechs = [];
+let mechTemplate; 
+let rnd = (l, u) => Math.random() * (u - l) + l;
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene");
   
-  mech = document.getElementById("mech-1");
- 
+  mechTemplate = document.getElementById("mech-1");
 
-  for(i=0; i< 10; i++){
+  for(let i=0; i< 10; i++){
     let x = rnd(-50, 50);
     let y = 0; 
     let z = rnd(-50, 50);
 
-    let  mech2 = new mech(x, y, z);
+    let m = new mech(x, y, z);
 
-    mechs.push(mech2);
+    mechs.push(m);
   }
 
   loop();
 })
 function loop(){
-
+  for(let m of mechs){
+    m.launch();
+  }
 
   window.requestAnimationFrame( loop );
 }
