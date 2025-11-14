@@ -2,18 +2,38 @@
   <head>
     <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
     <script src="script.js"></script>
+    <script src="chickenMouth.js"></script>
+    <script src="intestine.js"></script>
   </head>
   <body>
     <a-scene>
       <a-assets>
-        <!-- Challenge
-             Upload a picture to use as the texture for the walls of your maze if you want
-        -->
+        <img id="space" src="space.png">
+        <img id="grass" src="grass.jpg">
+        <img id="intest" src="intest.png">
       </a-assets>
-      <a-plane position="0 0 0" rotation="-90 0 0" width="150" height="150" color="#AAFFAA"></a-plane>
+
+      <a-sphere color="#259446" radius="75" side="double" opacity="0.45"></a-sphere>
       
+      <a-entity id="chicken" position="-6 -100000 50" ></a-entity>
+        <a-box id="body" color="#15cf55" position="0 10 0" width="50" height="50" depth="50" side= double></a-box>
+        <a-entity id="legs" position="0 0.25 0">
+          <a-box id="leg" position="-0.25 0 0" width="0.25" height="0.7" depth="0.25" color="red"></a-box>
+          <a-box id="toe" position="-0.25 -0.25 0.15" rotation="90 0 0" width="0.25" height="0.35" depth="0.25" color="red"></a-box>
+          <a-box id="leg" position="0.25 0 0" width="0.25" height="0.7" depth="0.25" color="red"></a-box>
+          <a-box id="toe" position="0.25 -0.25 0.15" rotation="90 0 0" width="0.25" height="0.35" depth="0.25" color="red"></a-box>
+        </a-entity>
+        <a-box id="wings" color="#15cf55" position="0 20 0" width="100" height="5" depth="50"></a-box>
+        <a-box id="head" color="#15cf55" position="0 10 35" width="25" height="25" depth="20" double="side"></a-box>
+        <a-entity id="eyes">
+          <a-box id="pupil" position="-10 12 45" width="5" height="5" depth="5" color="black" rotation="0 0 75"></a-box>
+          <a-box id="pupil" position="10 12 45" width="5" height="5" depth="5" color="black" rotation="0 0 -75"></a-box>
+        </a-entity>
+        <a-box id="roost" position="0 26 35.1" width="10" height="7" depth="20" color="black" ></a-box>
+      </a-entity>
+     
       
-      <a-sky color="blue"></a-sky>
-      <a-camera position="0 1.3 0"> 
-      </a-camera>
+      <a-sky  src="#space" repeat="5 5"></a-sky>
+      <a-circle position="0 -0.1 -4" rotation="-90 0 0" radius="100" src="#grass" repeat="9 9"></a-circle>
+      <a-camera wasd-controls="acceleration: 100; fly: true" position=" 0 3 100"></a-camera>
 </html>

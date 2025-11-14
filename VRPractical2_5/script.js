@@ -6,7 +6,7 @@
 
 /* Challenge 1
    Add appropriate classes to use as objects in your maze.  Choose characters to represent these objects and 
-   position them in the maze.   In Challenge 3 and 4, you will generate the maze along with any other object 
+   position them in the maze. In Challenge 3 and 4, you will generate the maze along with any other object 
    you chose to put in the maze.  Get Creative!
 */
 
@@ -30,17 +30,36 @@ let maze = [
 */
 
 let scene;
+let mouthTop;
+let mouthBottom;
 
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene");
+
+  mouthTop = new ChickenMouth(0, 5, 44,0);
+  mouthBottom = new ChickenMouth(0, 3, 44,0);
+
   for(let r = 0; r < maze.length; r++){
     /* Challenge 3
       Choose a technique to traverse the each character in the string.
     */ 
+    let row = maze[r];
+    let cols = row.split("");
     /* Challenge 4
        Make an appropriate decision based on the characters you chose to enter 
        in the maze.  Create an instance of the corresponding object.
     */
+
+    for(let c = 0; c < cols.length; c++){
+      if(cols[c] == "x"){
+        new Block(c,1,r)
+      }
+      else if(cols[c] == "T"){
+        new Tree(c,1,r);
+      }else if(cols[c]=="o"){
+        new Rock(c,1,r)
+      }
+    }
   }
 
 })
