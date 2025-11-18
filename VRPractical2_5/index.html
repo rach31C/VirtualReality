@@ -16,7 +16,7 @@
       <a-sphere color="#259446" radius="75" side="double" opacity="0.45"></a-sphere>
       
       <a-entity id="chicken" position="-6 -100000 50" ></a-entity>
-        <a-box id="body" color="#15cf55" position="0 10 0" width="50" height="50" depth="50" side= double></a-box>
+        <a-box id="body" color="#15cf55" position="0 10 0" width="50" height="50" depth="50" side="double"></a-box>
         <a-entity id="legs" position="0 0.25 0">
           <a-box id="leg" position="-0.25 0 0" width="0.25" height="0.7" depth="0.25" color="red"></a-box>
           <a-box id="toe" position="-0.25 -0.25 0.15" rotation="90 0 0" width="0.25" height="0.35" depth="0.25" color="red"></a-box>
@@ -24,7 +24,7 @@
           <a-box id="toe" position="0.25 -0.25 0.15" rotation="90 0 0" width="0.25" height="0.35" depth="0.25" color="red"></a-box>
         </a-entity>
         <a-box id="wings" color="#15cf55" position="0 20 0" width="100" height="5" depth="50"></a-box>
-        <a-box id="head" color="#15cf55" position="0 10 35" width="25" height="25" depth="20" double="side"></a-box>
+        <a-box id="head" color="#15cf55" position="0 10 35" width="25" height="25" depth="20" side="double"></a-box>
         <a-entity id="eyes">
           <a-box id="pupil" position="-10 12 45" width="5" height="5" depth="5" color="black" rotation="0 0 75"></a-box>
           <a-box id="pupil" position="10 12 45" width="5" height="5" depth="5" color="black" rotation="0 0 -75"></a-box>
@@ -35,5 +35,12 @@
       
       <a-sky  src="#space" repeat="5 5"></a-sky>
       <a-circle position="0 -0.1 -4" rotation="-90 0 0" radius="100" src="#grass" repeat="9 9"></a-circle>
-      <a-camera wasd-controls="acceleration: 100; fly: true" position=" 0 3 100"></a-camera>
+      <a-camera id="cam" wasd-controls="acceleration: 100; fly: false" position=" 0 0.1 100"></a-camera>
+
+      <script>
+        let camera=document.getElemetById("cam");
+        if(cam.getAttribute("position").z == -5){
+          cam.setAttribute("position",{x:0, y:0.5, z:30});
+        }
+      </script>
 </html>

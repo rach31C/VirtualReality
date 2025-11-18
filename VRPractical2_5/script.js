@@ -37,7 +37,9 @@ window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene");
 
   mouthTop = new ChickenMouth(0, 5, 44,0);
-  mouthBottom = new ChickenMouth(0, 3, 44,0);
+  mouthBottom = new ChickenMouth(0, 3, 44, 0.03);
+
+  
 
   for(let r = 0; r < maze.length; r++){
     /* Challenge 3
@@ -62,4 +64,12 @@ window.addEventListener("DOMContentLoaded",function() {
     }
   }
 
+  loop();
 })
+
+function loop(){
+
+  mouthBottom.down();
+  
+  window.requestAnimationFrame( loop );
+}

@@ -1,9 +1,9 @@
 class ChickenMouth{
-    constructor(x, y, z, dx, ry){
+    constructor(x, y, z, dy){
         this.x = x;
         this.y = y;
         this.z = z;
-        this.dx = dx;
+        this.dy = dy;
    
         this.obj = document.createElement('a-box');
         this.obj.setAttribute('width', '12');
@@ -17,12 +17,13 @@ class ChickenMouth{
         scene.append(this.obj);
     }
 
-    up(){
-
-    }
-
     down(){
-        
+        this.y += this.dy
+        if(this.y > 3|| this.y < -1.25){
+            this.dy = -this.dy;
+        }
+        this.obj.setAttribute("position",{x:this.x,y:this.y,z:this.z});
+
     }
 
    
