@@ -1,5 +1,7 @@
 let rnd = (l,u) => Math.random() * (u-l) + l
 let scene, camera, dart, blocks = [];
+let shot = false;
+let shrink = false;
 
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene");
@@ -23,6 +25,13 @@ function loop(){
      Note: Explore the Block class for an understanding of the 
      above two tasks.
   */
+
+     for(let b of blocks){
+      b.shrink();
+      if(dart && distance(dart.obj,b.obj) < 0.5){
+          b.shot = true;
+      }
+     }
 
   if(dart){
     dart.fly();
