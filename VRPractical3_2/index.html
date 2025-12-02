@@ -4,12 +4,22 @@
     <script src="script.js"></script>
   </head>
     <body>
-      <h1>Hi</h1>
       <a-scene >
-        <a-plane color="brown" position="0 0 -5" rotation="-90 0 0" width="50" height="50"></a-plane>
-        <a-sky color="blue"></a-sky>
+        <a-plane src="grass.jpg" position="0 0 -5" rotation="-90 0 0"  width="250" height="250" repeat="45 45"></a-plane>
+        <a-sky src="night.jpg" repeat="3 3"></a-sky>
 
-        <a-camera position="0 2 0">
+        <a-entity class="facility">
+          <a-box class="floor" src="floor.jpg" repeat="4 10" position="0 0 5" depth="20" height="0.1" width="20"></a-box>
+          <a-box class="window" color="#94d1ff" opacity="0.3" position="0 0.1 -5" depth="0.1" height="15" width="20"></a-box>
+          <a-box class="backWall" src="wall.jpg" repeat="2 7" position="0 0 15" depth="1" height="16" width="20"></a-box>
+          <a-box class="rightWall" src="wall.jpg" rotation="0 90 0" repeat="2 7" position="10.5 0 5" depth="1" height="16" width="21"></a-box>
+          <a-box class="leftWall" src="wall.jpg" rotation="0 90 0" repeat="2 7" position="-10.5 0 5" depth="1" height="16" width="21"></a-box>
+          <a-box class="frontPillerLeft" src="wall.jpg" repeat="2 7" position="9.5 0 -5" depth="1" height="16" width="2"></a-box>
+          <a-box class="frontPillerRight" src="wall.jpg" repeat="2 7" position="-9.5 0 -5" depth="1" height="16" width="2"></a-box>
+
+        </a-entity>
+
+        <a-camera position="0 2 1">
           <a-cursor raycaster="objects: [interact]"></a-cursor>
         </a-camera>
         

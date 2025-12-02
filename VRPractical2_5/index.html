@@ -13,34 +13,28 @@
         <img id="intest" src="intest.png">
       </a-assets>
 
-      <a-sphere color="#259446" radius="75" side="double" opacity="0.45"></a-sphere>
+      <a-sphere color="#259446" position="23.48 0 23.9" radius="75" side="double" opacity="0.45"></a-sphere>
       
-      <a-entity id="chicken" position="-6 -100000 50" ></a-entity>
+      <a-entity id="chicken" position="23.48 0 23.6" >
         <a-box id="body" color="#15cf55" position="0 10 0" width="50" height="50" depth="50" side="double"></a-box>
-        <a-entity id="legs" position="0 0.25 0">
-          <a-box id="leg" position="-0.25 0 0" width="0.25" height="0.7" depth="0.25" color="red"></a-box>
-          <a-box id="toe" position="-0.25 -0.25 0.15" rotation="90 0 0" width="0.25" height="0.35" depth="0.25" color="red"></a-box>
-          <a-box id="leg" position="0.25 0 0" width="0.25" height="0.7" depth="0.25" color="red"></a-box>
-          <a-box id="toe" position="0.25 -0.25 0.15" rotation="90 0 0" width="0.25" height="0.35" depth="0.25" color="red"></a-box>
-        </a-entity>
+        <a-box id="insideBody" src="insides.png" repeat="2 2" position="0 5.1 0" width="49.5" height="10" depth="49.5" side="double"></a-box>
         <a-box id="wings" color="#15cf55" position="0 20 0" width="100" height="5" depth="50"></a-box>
         <a-box id="head" color="#15cf55" position="0 10 35" width="25" height="25" depth="20" side="double"></a-box>
+        <a-box id="insidehead" src="insides.png" repeat="2 2" position="0 3.6 35" width="24.5" height="7" depth="19" side="double"></a-box>
+        <a-circle id="hole" color="black" position="-5.5 1.75 26" radius="2" opacity="0.6"></a-circle>
         <a-entity id="eyes">
           <a-box id="pupil" position="-10 12 45" width="5" height="5" depth="5" color="black" rotation="0 0 75"></a-box>
           <a-box id="pupil" position="10 12 45" width="5" height="5" depth="5" color="black" rotation="0 0 -75"></a-box>
         </a-entity>
-        <a-box id="roost" position="0 26 35.1" width="10" height="7" depth="20" color="black" ></a-box>
+        <a-box id="roost" position="0 25 35.1" width="10" height="5" depth="20" color="black" ></a-box>
       </a-entity>
      
       
       <a-sky  src="#space" repeat="5 5"></a-sky>
-      <a-circle position="0 -0.1 -4" rotation="-90 0 0" radius="100" src="#grass" repeat="9 9"></a-circle>
-      <a-camera id="cam" wasd-controls="acceleration: 100; fly: false" position=" 0 0.1 100"></a-camera>
+      <a-circle position="23.48 0 23.9" rotation="-90 0 0" radius="100" src="#grass" repeat="9 9"></a-circle>
+      <a-camera id="cam" wasd-controls="acceleration: 100; fly: false" position=" 23.48 0.5 80"></a-camera>
 
       <script>
-        let camera=document.getElemetById("cam");
-        if(cam.getAttribute("position").z == -5){
-          cam.setAttribute("position",{x:0, y:0.5, z:30});
-        }
+        
       </script>
 </html>
