@@ -1,9 +1,21 @@
 let rnd = (l,u) => Math.random() * (u-l) + l
 let scene, camera, bullet, enemies = [], ammo_boxes = [], ammo_count = 3, enemy_killed = 0;
+let chickens = [];
+let UFO;
 
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene");
   camera = document.querySelector("a-camera");
+
+  UFO = new UFO(3, 4, 5);
+  for(let i=0; i<25; i++){
+    let x = rnd(-15,15);
+    let y = rnd(1,8);
+    let z = rnd(-15,3);
+    let dx = Math.random() * 0.4 - 0.2;
+    let c = new Chicken( x , y , z, dx);
+    chickens.push(c);
+  }
 
   window.addEventListener("keydown",function(e){
     //User can only fire with they press the spacebar and have sufficient ammo
@@ -20,6 +32,10 @@ window.addEventListener("DOMContentLoaded",function() {
 function loop(){
   if(bullet){
     bullet.fire();
+  }
+
+  for(let c of chickens){
+    c.spin();
   }
  
   window.requestAnimationFrame(loop);

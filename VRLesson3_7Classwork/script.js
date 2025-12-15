@@ -16,6 +16,9 @@ window.addEventListener("DOMContentLoaded",function() {
      cameras in the balls when the user presses the space bar.
   */
 
+
+    
+
   loop();
 })
 
@@ -31,3 +34,8 @@ function loop(){
    Create a function to turn off the cameras in all the balls. This 
    is needed for the rest of the challenges.
 */
+ function disableAllBallCameras(){
+   for(let ball of balls){
+     ball.disableCamera();
+   }
+  }

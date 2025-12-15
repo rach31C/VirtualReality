@@ -59,5 +59,5 @@ function loop(){
   }
   
   rocket.launch();
-  window.requestAnimationFrame( loop );
+  window.requestAnimationFrame( loop );s
 }

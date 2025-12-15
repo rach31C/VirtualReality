@@ -30,6 +30,7 @@ function loop(){
       b.shrink();
       if(dart && distance(dart.obj,b.obj) < 0.5){
           b.shot = true;
+
       }
      }
 
